@@ -11,8 +11,7 @@
 
 @implementation BaseFooterView
 
-- (instancetype)initWithfootView:(CGPoint)origin andHeight:(CGFloat)height
-{
+- (instancetype)initWithfootView:(CGPoint)origin andHeight:(CGFloat)height {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     self = [self initWithFrame:CGRectMake(origin.x, origin.y, screenSize.width, height)];
     

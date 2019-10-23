@@ -7,14 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-/**
- *  代理，用来传递点击的是第几行,当触CollectionView的时候
- */
-@protocol  delegateColl <NSObject>
-
--(void)ClickCooRow :(int)CellRow;
-
-@end
 
 @interface HomeTableViewCell : UITableViewCell
 /**
@@ -25,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *CollView;
 
-
-@property (weak, nonatomic) id <delegateColl> delegateColl;
+@property (copy, nonatomic) void (^didSelectItemWithBlock)(NSInteger item);
 
 @end

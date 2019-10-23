@@ -10,8 +10,7 @@
 
 @implementation ViewModel
 
-+(void)getGuestData :(NSDictionary *)PostData secuessBlock:(void(^)(NSArray *FeedList))FeedbackData  ErrCode:(void(^)(id ErrCode))ErrorCode
-{
++(void)getGuestData :(NSDictionary *)PostData secuessBlock:(void(^)(NSArray *FeedList))FeedbackData  ErrCode:(void(^)(id ErrCode))ErrorCode {
     NSString *handleUrl  = @"https://itunes.apple.com/search";
     handleUrl = [handleUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

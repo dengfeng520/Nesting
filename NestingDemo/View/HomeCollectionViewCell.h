@@ -18,5 +18,5 @@
 /**
  *  接收数据
  */
--(void)SetCollCellData :(HomeModel *)HModel;
+-(void)fetchCollCellData:(HomeModel *)HModel;
 @end

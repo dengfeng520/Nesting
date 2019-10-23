@@ -11,11 +11,10 @@
 #import "HomeCollectionViewCell.h"
 #import "Header.h"
 
-
-
 @implementation HomeTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
@@ -26,58 +25,48 @@
 }
 
 //定义展示的UICollectionViewCell的个数
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.HomeArray.count;
 }
 //定义展示的Section的个数
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
 //每个UICollectionView展示的内容
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HomeModel *HModel = [self.HomeArray objectAtIndex:indexPath.row];
     
     HomeCollectionViewCell *collcell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollCell" forIndexPath:indexPath];
     
  
-    [collcell SetCollCellData:HModel];
+    [collcell fetchCollCellData:HModel];
     
 
     return collcell;
 }
-#pragma mark --UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 //定义每个UICollectionView 的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(SCREEN_WIDTH / 2 - 8, 145);
 }
 
 //定义每个UICollectionView 的 margin
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(3, 3, 0.1, 3);
 }
-#pragma mark --UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 //UICollectionView被选中时调用的方法
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
-    //代理传值
-    if([self.delegateColl respondsToSelector:@selector(ClickCooRow:)])
-    {
-        [self.delegateColl ClickCooRow:indexPath.row];
+    if (self.didSelectItemWithBlock) {
+        self.didSelectItemWithBlock(indexPath.row);
     }
-    
 }
 
 //接收数据
--(void)getHomeArray:(NSArray *)homeArray
-{
+- (void)getHomeArray:(NSArray *)homeArray {
     self.HomeArray = homeArray;
 }
 

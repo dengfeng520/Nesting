@@ -11,8 +11,7 @@
 
 @implementation HomeCollectionViewCell
 
--(void)SetCollCellData :(HomeModel *)HModel
-{
+- (void)fetchCollCellData:(HomeModel *)HModel {
     //图片
     [self.HeadImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",HModel.artworkUrl60]] placeholderImage:[UIImage imageNamed:@"pic_xwmr"]];
     

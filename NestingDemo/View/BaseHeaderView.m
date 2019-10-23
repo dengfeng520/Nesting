@@ -11,8 +11,7 @@
 
 @implementation BaseHeaderView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
@@ -21,8 +20,7 @@
     return self;
 
 }
-- (instancetype)initWithHeaderView:(CGPoint)origin andHeight:(CGFloat)height
-{
+- (instancetype)initWithHeaderView:(CGPoint)origin andHeight:(CGFloat)height {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     self = [self initWithFrame:CGRectMake(origin.x, origin.y, screenSize.width, height)];
 
