@@ -19,6 +19,7 @@
 		1C21BE9C1C87DF24001E04DF /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21BE9B1C87DF24001E04DF /* ViewModel.m */; };
 		1CCCAF641C8813FD0066AD1B /* BaseFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCAF611C8813FD0066AD1B /* BaseFooterView.m */; };
 		1CCCAF651C8813FD0066AD1B /* BaseHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCAF631C8813FD0066AD1B /* BaseHeaderView.m */; };
+		A2C54F364B4794C36A027479 /* Pods_NestingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF358B0E19058399BE1150CA /* Pods_NestingDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,9 @@
 		1CCCAF631C8813FD0066AD1B /* BaseHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHeaderView.m; sourceTree = "<group>"; };
 		1CCCAF6B1C8817F60066AD1B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		1CCCAF6C1C8818190066AD1B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		53D6CCD678200AB00E095F0B /* Pods-NestingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestingDemo.release.xcconfig"; path = "Target Support Files/Pods-NestingDemo/Pods-NestingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CF358B0E19058399BE1150CA /* Pods_NestingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NestingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE098F5B244536F7D5AE559A /* Pods-NestingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestingDemo.debug.xcconfig"; path = "Target Support Files/Pods-NestingDemo/Pods-NestingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C54F364B4794C36A027479 /* Pods_NestingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3DEA1C44A204164B87E52A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF358B0E19058399BE1150CA /* Pods_NestingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1C21BE491C87DA87001E04DF = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +83,8 @@
 				1C21BE6E1C87DA88001E04DF /* NestingDemoTests */,
 				1C21BE791C87DA88001E04DF /* NestingDemoUITests */,
 				1C21BE531C87DA87001E04DF /* Products */,
+				99EB010D1810886CEEDC11AA /* Pods */,
+				1B3DEA1C44A204164B87E52A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +184,16 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
+		99EB010D1810886CEEDC11AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE098F5B244536F7D5AE559A /* Pods-NestingDemo.debug.xcconfig */,
+				53D6CCD678200AB00E095F0B /* Pods-NestingDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C21BE7F1C87DA88001E04DF /* Build configuration list for PBXNativeTarget "NestingDemo" */;
 			buildPhases = (
+				C830A0504427275EB6D50ECA /* [CP] Check Pods Manifest.lock */,
 				1C21BE4E1C87DA87001E04DF /* Sources */,
 				1C21BE4F1C87DA87001E04DF /* Frameworks */,
 				1C21BE501C87DA87001E04DF /* Resources */,
+				7C707C5B724C9D4257403897 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +261,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C707C5B724C9D4257403897 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NestingDemo/Pods-NestingDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NestingDemo/Pods-NestingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C830A0504427275EB6D50ECA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NestingDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C21BE4E1C87DA87001E04DF /* Sources */ = {
@@ -358,6 +436,7 @@
 		};
 		1C21BE801C87DA88001E04DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE098F5B244536F7D5AE559A /* Pods-NestingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NestingDemo/Info.plist;
@@ -369,6 +448,7 @@
 		};
 		1C21BE811C87DA88001E04DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53D6CCD678200AB00E095F0B /* Pods-NestingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NestingDemo/Info.plist;
